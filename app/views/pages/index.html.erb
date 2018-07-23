@@ -1,4 +1,8 @@
 <% if !user_signed_in? %>
+<div class = "container">
+<h1 class="title is-1">Welcome to TeacherConnection!</h1>
+<h3 class="subtitle is-3">A place for teachers to connect, share and thrive!</h3>
+<div>
 <style>
     html{
         background: url("/eddie.jpg") no-repeat center center fixed;
@@ -8,6 +12,7 @@
         background-size: cover;
     }
 </style>
+
 <% else %>
 <h1> Signed in </h1>
 
