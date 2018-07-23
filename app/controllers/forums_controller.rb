@@ -15,7 +15,7 @@ class ForumsController < ApplicationController
 
   # GET /forums/new
   def new
-    @forum = Forum.new
+    @forum = current_user.forums.build
   end
 
   # GET /forums/1/edit
@@ -25,7 +25,7 @@ class ForumsController < ApplicationController
   # POST /forums
   # POST /forums.json
   def create
-    @forum = Forum.new(forum_params)
+    @forum = current_user.forums.build(forum_params)
 
     respond_to do |format|
       if @forum.save

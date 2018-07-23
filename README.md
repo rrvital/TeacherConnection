@@ -18,7 +18,7 @@
 
 ## Design/Modeling Tools
 
-* Draw.io 
+* Draw.io
   * [Proposed Entity Relational Diagram](https://drive.google.com/file/d/154AFBZbxYKtD-LZzbHOpLdqnBG-FbkK_/view?usp=sharing)
 * MockFlow
   * [Proposed Homepage](https://ibb.co/dkMwry)
