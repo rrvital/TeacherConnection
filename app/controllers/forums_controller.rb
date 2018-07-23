@@ -65,14 +65,14 @@ class ForumsController < ApplicationController
 
   def upvote 
     @forum = Forum.find(params[:id])
-    @link.upvote_by current_user
-    redirect_to root_path
+    @forum.upvote_by current_user
+    redirect_to forums_path
   end  
   
   def downvote
     @forum = Forum.find(params[:id])
     @forum.downvote_by current_user
-    redirect_to root_path
+    redirect_to forums_path
   end
 
 
