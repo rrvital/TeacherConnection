@@ -4,6 +4,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 gem 'faker', '~> 1.8', '>= 1.8.7'
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'acts_as_votable', '~> 0.11.1'
+gem 'simple_form'
+gem 'record_tag_helper', '~> 1.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record

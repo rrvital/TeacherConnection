@@ -63,6 +63,19 @@ class ForumsController < ApplicationController
     end
   end
 
+  def upvote 
+    @forum = Forum.find(params[:id])
+    @link.upvote_by current_user
+    redirect_to root_path
+  end  
+  
+  def downvote
+    @forum = Forum.find(params[:id])
+    @forum.downvote_by current_user
+    redirect_to root_path
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_forum

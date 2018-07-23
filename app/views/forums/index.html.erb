@@ -1,34 +1,24 @@
-<p id="notice"><%= notice %></p>
+<% @forums.each do |forum| %>
+  <div class="link row clearfix">
+    <h2>
+        <%= link_to forum.title, forum %><br>
+        <small class="author">Submitted <%= time_ago_in_words(forum.created_at) %> ago by <%= forum.user.name %></small>
+    </h2>
 
-<h1>Forums</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Url</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @forums.each do |forum| %>
-      <tr>
-        <td><%= forum.title %></td>
-        <td><%= forum.url %></td>
-        <td><%= forum.description %></td>
-        <td><%= link_to 'Show', forum %></td>
-
-        <% if forum.user == current_user %>
-        <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
-        <td><%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <div class="btn-group">
+        <a class="btn btn-default btn-sm" href="<%= forum.url %>">Visit Link</a>
+        <%= link_to like_forum_path(forum), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Upvote
+        <%= forum.get_upvotes.size %>
         <% end %>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <%= link_to dislike_forum_path(forum), method: :put, class: "btn btn-default btn-sm" do %>
+        <span class="glyphicon glyphicon-chevron-down"></span>
+        Downvote
+        <%= forum.get_downvotes.size %>
+        <% end %>
+      </div>
 
-<br>
-
+    </div>
+<% end %>
