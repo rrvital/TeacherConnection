@@ -1,7 +1,14 @@
-<h1>Home page</h1>
-<br>
-<%= link_to 'Click to go to Forums', forums_path %></li>
+<% if !user_signed_in? %>
+<style>
+    html{
+        background: url("/eddie.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -0-background-size: cover;
+        background-size: cover;
+    }
+</style>
+<% else %>
+Signed in
 
-<div class= "hero">
-
-</div>
+<% end %>
