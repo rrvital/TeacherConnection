@@ -17,12 +17,12 @@
 <div class="btn-group pull-right">
  <%= link_to like_forum_path(@forum), method: :put, class: "btn btn-default btn-sm" do %>
   <span class="glyphicon glyphicon-chevron-up"></span>
-  Upvote
+  👍
   <%= @forum.get_upvotes.size %>
  <% end %>
  <%= link_to dislike_forum_path(@forum), method: :put, class: "btn btn-default btn-sm" do %>
   <span class="glyphicon glyphicon-chevron-down"></span>
-  Downvote
+  👎
   <%= @forum.get_downvotes.size %>
  <% end %>
 </div>
