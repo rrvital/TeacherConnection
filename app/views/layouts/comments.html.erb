@@ -1,33 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teacher Connection</title>
+<html>
+  <head>
+    <title>TeacherConnection</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<!-- Favicons
-    ================================================== -->
-<!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png"> -->
-
-<!-- Bootstrap -->
-
-<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
-
-<!-- Stylesheet
-    ================================================== -->
+  <body>
+<%# header %>
 
 <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
 <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-<%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-<%= stylesheet_link_tag "bootstrap.css" %>
-<%= stylesheet_link_tag "style.css" %>
-
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
@@ -76,11 +64,22 @@
         </div>
       </nav>
 
-<%= yield %>
+
+
+  
+
+  <%# main content container %>
+  
+    <div id="main_content" class="container">
+        <% flash.each do |name, msg| %>
+          <%= content_tag(:div, msg, class: "alert alert-info") %>
+        <% end %>
+
+
+    <div id="content" class="col-md-9 center-block">
+
+    <%= yield %>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</body>
+  </body>
 </html>
-
-
-							

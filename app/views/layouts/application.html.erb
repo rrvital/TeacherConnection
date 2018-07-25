@@ -11,30 +11,16 @@
 
   <body>
 <%# header %>
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+<%= stylesheet_link_tag  'application.css' %>
+<%= stylesheet_link_tag  'rails.css' %>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-  	<nav class="navbar is-warning">
-  		<div class="navbar-brand">
-  		<%= link_to root_path, class: "navbar-item" do %>
-  			<h1 class="title is-5">TeacherConnection!</h1>
-  		<% end %>
-			<div class="navbar-burger burger" data-target="navbarExample">
-		      <span></span>
-					<span></span>
-          <span></span>
-  		</div>
-  	 </div>
 
-			<div id="navbarExample" class="navbar-menu">
-				<div class="navbar-end">
-          <div class="navbar-item">
-					
-            </div>
-					</div>
-				</div>
-			</div>
-  	</nav>
   
-
   <%# main content container %>
   
     <div id="main_content" class="container">
@@ -46,5 +32,7 @@
     <div id="content" class="col-md-9 center-block">
 
     <%= yield %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

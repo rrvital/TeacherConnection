@@ -1,4 +1,51 @@
 
+<!-- Navigation
+    ==========================================-->
+    <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container"> 
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Teacher Connection</a> </div>
+          
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#about" class="page-scroll">Near Me</a></li>
+              <li><a href="#services" class="page-scroll">Events</a></li>
+              <li><a href="#portfolio" class="page-scroll">Social Media</a></li>
+              <li><a href="#team" class="page-scroll">Testimonial</a></li>
+              <li><a href="#contact" class="page-scroll">News Letter</a></li>
+              <li>
+              <%= link_to 'Post Forum', new_forum_path, class: "button is-info is-inverted" %>
+                </li>
+                <% if user_signed_in? %>
+                <li>
+              <%= link_to current_user.first_name, edit_user_registration_path, class: "button is-info" %>
+                </li>
+                <li>
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
+                </li>
+                <% else %>
+                <li>
+                    <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
+                </li>
+                <li>
+                    <%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
+                </li>
+                <% end %>
+            </ul>
+          </div>
+          <div>
+
+
+
+          <!-- /.navbar-collapse --> 
+        </div>
+      </nav>
+
+
+
       <!-- Header -->
       <header id="header">
         <div class="intro">
@@ -193,100 +240,7 @@
           </div>
         </div>
       </div>
-      <!-- Testimonial Section -->
-      <div id="team" class="text-center">
-        <div class="overlay">
-          <div class="container">
-            <div class="col-md-8 col-md-offset-2 section-title">
-              <h2>Testimonial</h2>
-              <hr>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
-            </div>
-            <div id="row">
-              <div class="col-md-3 col-sm-6 team">
-                <div class="thumbnail"> <%= image_tag('team/01.jpg', class: 'team-img') %>
-                  <div class="caption">
-                    <h3>John Doe</h3>
-                    <p>Director</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 team">
-                <div class="thumbnail"> <%= image_tag('team/02.jpg', class: 'img-circle team-img') %>
-                  <div class="caption">
-                    <h3>Mike Doe</h3>
-                    <p>Senior Designer</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 team">
-                <div class="thumbnail"> <%= image_tag('team/03.jpg', class: 'img-circle team-img') %>
-                  <div class="caption">
-                    <h3>Jane Doe</h3>
-                    <p>Senior Designer</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-6 team">
-                <div class="thumbnail"> <%= image_tag('team/04.jpg', class: 'img-circle team-img') %>
-                  <div class="caption">
-                    <h3>Karen Doe</h3>
-                    <p>Project Manager</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Contact Section -->
-      <div id="contact">
-        <div class="container">
-          <div class="section-title text-center">
-            <h2>News Letter</h2>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
-          </div>
-          <div class="col-md-4">
-            <h3>Contact Info</h3>
-            <div class="contact-item"> <span>Address</span>
-              <p>549 NW 28th St,<br>
-                Miami, FL 33127</p>
-            </div>
-            <div class="contact-item"> <span>Email</span>
-              <p>info@teacherconnection.com</p>
-            </div>
-            <div class="contact-item"> <span>Phone</span>
-              <p> +1 305 720 2422</p>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <h3>Leave us a message</h3>
-            <form name="sentMessage" id="contactForm" novalidate>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" id="name" class="form-control" placeholder="Name" required="required">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" id="email" class="form-control" placeholder="Email" required="required">
-                    <p class="help-block text-danger"></p>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
-                <p class="help-block text-danger"></p>
-              </div>
-              <div id="success"></div>
-              <button type="submit" class="btn btn-custom btn-lg">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
+     
       <div id="footer">
         <div class="container text-center">
           <div class="social">
