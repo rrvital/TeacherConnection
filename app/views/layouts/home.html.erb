@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher Connection</title>
+
+
+<!-- Favicons
+    ================================================== -->
+<!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png"> -->
+
+<!-- Bootstrap -->
+
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+<!-- Stylesheet
+    ================================================== -->
+
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Navigation
+    ==========================================-->
+    <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container"> 
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Teacher Connection</a> </div>
+          
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#about" class="page-scroll">Near Me</a></li>
+              <li><a href="#services" class="page-scroll">Events</a></li>
+              <li><a href="#portfolio" class="page-scroll">Social Media</a></li>
+              <li><a href="#team" class="page-scroll">Testimonial</a></li>
+              <li><a href="#contact" class="page-scroll">News Letter</a></li>
+              <li>
+              <%= link_to 'Post Forum', new_forum_path, class: "button is-info is-inverted" %>
+                </li>
+                <% if user_signed_in? %>
+                <li>
+              <%= link_to current_user.first_name, edit_user_registration_path, class: "button is-info" %>
+                </li>
+                <li>
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
+                </li>
+                <% else %>
+                <li>
+                    <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
+                </li>
+                <li>
+                    <%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
+                </li>
+                <% end %>
+            </ul>
+          </div>
+          <div>
+
+
+
+          <!-- /.navbar-collapse --> 
+        </div>
+      </nav>
+
+<%= yield %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+</html>
+
+
+							
