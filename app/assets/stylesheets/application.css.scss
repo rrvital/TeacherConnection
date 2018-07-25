@@ -14,35 +14,35 @@
  *= require_self
  */
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import 'bulma';
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+// @import 'bulma';
 
-#logo {
-    font-size: 26px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    padding: 15px 0;
-    a {
-        color: #2f363e;
-    }
-}
+// #logo {
+//     font-size: 26px;
+//     font-weight: 700;
+//     text-transform: uppercase;
+//     letter-spacing: -1px;
+//     padding: 15px 0;
+//     a {
+//         color: #2f363e;
+//     }
+// }
 
-#main_content {
-    #content {
-        float: none;
-    }
-    padding-bottom: 100px;
-    .link {
-    padding: 2em 1em;
-    border-bottom: 1px solid #e9e9e9;
-    .title {
+// #main_content {
+//     #content {
+//         float: none;
+//     }
+//     padding-bottom: 100px;
+//     .link {
+//     padding: 2em 1em;
+//     border-bottom: 1px solid #e9e9e9;
+//     .title {
 
-    a {
-        color: #FF4500;
-     }   
-    }
-    }
+//     a {
+//         color: #FF4500;
+//      }   
+//     }
+//     }
     
-}
+// }

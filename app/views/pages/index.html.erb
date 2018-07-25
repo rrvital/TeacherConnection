@@ -1,21 +1,305 @@
-<% if !user_signed_in? %>
-<div class = "container">
-<h1 class="title is-1">Welcome to TeacherConnection!</h1>
-<h3 class="subtitle is-3">A place for teachers to connect, share and thrive!</h3>
-<div>
-<style>
-    html{
-        background: url("/eddie.jpg") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -0-background-size: cover;
-        background-size: cover;
-    }
-</style>
 
-<% else %>
-<h1> Signed in </h1>
-
-<%= link_to 'Click to go to Forums', forums_path %></li>
-
-<% end %>
+      <!-- Header -->
+      <header id="header">
+        <div class="intro">
+          <div class="overlay">
+            <div class="container">
+              <div class="row">
+                <div class="intro-text">
+                  <h1><strong>Teacher 🔗 Connect</strong>
+                  <p>Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+                  <a href="#about" class="btn btn-custom btn-lg page-scroll">Learn More</a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Near Me Section -->
+      <div id="about">
+        <div class="container">
+          <div class="section-title text-center center">
+            <h2>NEAR ME</h2>
+            <hr>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-md-6 text-center"> <%= image_tag('near-me.png', class: 'img-responsive', alt: 'near-me') %> </div>
+            <div class="col-xs-12 col-md-6">
+              <div class="about-text">
+                <h3>Meetup #1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
+                <h3>Meetup #2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Events Section -->
+      <div id="services">
+        <div class="container">
+          <div class="col-md-10 col-md-offset-1 section-title text-center">
+            <h2>Events</h2>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 service"> <%= image_tag('event1.jpg', class: 'img-responsive', alt: 'Project-Title') %>
+              <h3>Connect #1</h3>
+              <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam. Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend.</p>
+            </div>
+            <div class="col-xs-12 col-sm-4 service"> <%= image_tag('event2.jpg', class: 'img-responsive', alt: 'Project-Title') %>
+              <h3>Connect #2</h3>
+              <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam. Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend.</p>
+            </div>
+            <div class="col-xs-12 col-sm-4 service"> <%= image_tag('event3.jpg', class: 'img-responsive', alt: 'Project-Title') %>
+              <h3>Connect #3</h3>
+              <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam. Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Social Media Section -->
+      <div id="portfolio">
+        <div class="container">
+          <div class="section-title text-center center">
+            <h2>Social Media</h2>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+          </div>
+          <div class="categories">
+            <ul class="cat">
+              <li>
+                <ol class="type">
+                  <li><a href="#" data-filter="*" class="active">Instagram</a></li>
+                  <li><a href="#" data-filter=".residential">Twitter</a></li>
+                  <li><a href="#" data-filter=".office">Facebook</a></li>
+                  <li><a href="#" data-filter=".commercial">Pinterest</a></li>
+                </ol>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="row">
+            <div class="portfolio-items">
+              <div class="col-sm-6 col-md-4 col-lg-4 residential">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <%= image_tag('portfolio/image.jpg', class: 'img-responsive', alt: 'social-media') %>
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/image.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 commercial">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 residential">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/03-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 residential">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/04-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 commercial">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/05-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 office">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/06-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 office">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/07-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 residential">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/08-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 commercial">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/09-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/09-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 office">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/10-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/10-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 office">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/11-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-4 residential">
+                <div class="portfolio-item">
+                  <div class="hover-bg"> <a href="img/portfolio/12-large.jpg" title="Project Title" data-lightbox-gallery="gallery1">
+                    <div class="hover-text">
+                      <h4>Project Name</h4>
+                    </div>
+                    <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial Section -->
+      <div id="team" class="text-center">
+        <div class="overlay">
+          <div class="container">
+            <div class="col-md-8 col-md-offset-2 section-title">
+              <h2>Testimonial</h2>
+              <hr>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+            </div>
+            <div id="row">
+              <div class="col-md-3 col-sm-6 team">
+                <div class="thumbnail"> <%= image_tag('team/01.jpg', class: 'team-img') %>
+                  <div class="caption">
+                    <h3>John Doe</h3>
+                    <p>Director</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 team">
+                <div class="thumbnail"> <%= image_tag('team/02.jpg', class: 'img-circle team-img') %>
+                  <div class="caption">
+                    <h3>Mike Doe</h3>
+                    <p>Senior Designer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 team">
+                <div class="thumbnail"> <%= image_tag('team/03.jpg', class: 'img-circle team-img') %>
+                  <div class="caption">
+                    <h3>Jane Doe</h3>
+                    <p>Senior Designer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 team">
+                <div class="thumbnail"> <%= image_tag('team/04.jpg', class: 'img-circle team-img') %>
+                  <div class="caption">
+                    <h3>Karen Doe</h3>
+                    <p>Project Manager</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Contact Section -->
+      <div id="contact">
+        <div class="container">
+          <div class="section-title text-center">
+            <h2>News Letter</h2>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Contact Info</h3>
+            <div class="contact-item"> <span>Address</span>
+              <p>549 NW 28th St,<br>
+                Miami, FL 33127</p>
+            </div>
+            <div class="contact-item"> <span>Email</span>
+              <p>info@teacherconnection.com</p>
+            </div>
+            <div class="contact-item"> <span>Phone</span>
+              <p> +1 305 720 2422</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h3>Leave us a message</h3>
+            <form name="sentMessage" id="contactForm" novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+                    <p class="help-block text-danger"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+              <div id="success"></div>
+              <button type="submit" class="btn btn-custom btn-lg">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="container text-center">
+          <div class="social">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+          </div>
+          <div>
+            <p>&copy; Copyright 2018 Teacher Connection.</p>
+          </div>
+        </div>
+      </div>
