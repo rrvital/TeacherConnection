@@ -10,7 +10,7 @@
 <% if @forum.user == current_user %>
  <div class="btn-group">
   <%= link_to 'Edit', edit_forum_path(@forum), class: "btn btn-default" %>
-  <%= link_to 'Destroy', @forum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+  <%= link_to 'Delete', @forum, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
  </div>
 <% end %>
 
