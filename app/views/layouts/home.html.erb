@@ -23,7 +23,11 @@
 <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
 <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<%= stylesheet_link_tag "bootstrap.css" %>
+<%= stylesheet_link_tag "style.css" %>
+
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
@@ -42,30 +46,11 @@
               <li><a href="#about" class="page-scroll">Near Me</a></li>
               <li><a href="#services" class="page-scroll">Events</a></li>
               <li><a href="#portfolio" class="page-scroll">Social Media</a></li>
-              <li><a href="#team" class="page-scroll">Testimonial</a></li>
-              <li><a href="#contact" class="page-scroll">News Letter</a></li>
-              <li>
-              <%= link_to 'Post Forum', new_forum_path, class: "button is-info is-inverted" %>
-                </li>
-                <% if user_signed_in? %>
-                <li>
-              <%= link_to current_user.first_name, edit_user_registration_path, class: "button is-info" %>
-                </li>
-                <li>
-                    <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
-                </li>
-                <% else %>
-                <li>
-                    <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
-                </li>
-                <li>
-                    <%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
-                </li>
-                <% end %>
+              <%# <li><a href="#nearme" class="page-scroll">Testimonial</a></li> %>
+              <li><a href="#footer" class="page-scroll">Newsletter</a></li>
             </ul>
           </div>
           <div>
-
 
 
           <!-- /.navbar-collapse --> 
