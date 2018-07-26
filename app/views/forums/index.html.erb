@@ -1,10 +1,15 @@
 <% @forums.each do |forum| %>
-  <div class="link row clearfix">
-    <h2>
-        <%= link_to forum.title, forum %><br>
-        <small class="author">Submitted <%= time_ago_in_words(forum.created_at) %> ago by <%= forum.user.username %></small>
-    </h2>
-
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="https://bulma.io/images/placeholders/128x128.png">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= link_to forum.title, forum %></strong> <small><%= forum.user.username %></small> <small><%= time_ago_in_words(forum.created_at) %> ago</small>
+         
     <div class="btn-group">
         <a class="btn btn-default btn-sm" href="<%= forum.url %>">Visit Link</a>
         <%= link_to like_forum_path(forum), method: :put, class: "btn btn-default btn-sm" do %>
@@ -20,5 +25,10 @@
         <% end %>
       </div>
 
+        </p>
+      </div>
     </div>
+
+  </article>
 <% end %>
+
