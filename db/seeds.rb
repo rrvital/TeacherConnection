@@ -62,7 +62,8 @@
 #         end
 #     end
 # end
-User.destroy_all
+# User.destroy_all
+
 5.times do |i|
             User.create!([{
             first_name: Faker::Name.first_name , 
@@ -72,3 +73,11 @@ User.destroy_all
              }] )
 end
     
+
+5.times do |i|
+            Forum.create(
+             title: Faker::Zelda.character ,
+             description: Faker::ChuckNorris.fact ,
+             user_id: i
+            )
+end
