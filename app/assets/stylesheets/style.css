@@ -92,7 +92,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 }
 /* Navigation */
 #menu {
-	padding: 20px;
+	/* padding: 5px; */
 	transition: all 0.8s;
 }
 #menu.navbar-default {
