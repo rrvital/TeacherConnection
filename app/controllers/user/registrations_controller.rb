@@ -26,11 +26,12 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-  if resource.save
-    @user = resource
-    @user.avatar = params[:user][:avatar] 
-    @user.save
     super
+    if resource.save
+      @user = resource
+      @user.avatar = params[:user][:avatar] 
+      @user.save
+    end
   end
 
   # DELETE /resource

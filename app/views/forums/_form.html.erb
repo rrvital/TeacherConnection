@@ -1,4 +1,4 @@
-<%= form_with(model: forum, local: true) do |form| %>
+<%= form_with(model: forum, remote: true) do |form| %>
   <% if forum.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(forum.errors.count, "error") %> prohibited this forum from being saved:</h2>
