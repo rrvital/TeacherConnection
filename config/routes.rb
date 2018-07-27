@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     end
     resources :comments
   end
-  
+  get '/app' => 'app#index'
+
   root to: 'pages#index'
 end
