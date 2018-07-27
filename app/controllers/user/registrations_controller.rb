@@ -12,8 +12,12 @@ class User::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    @user.avatar = params[:user][:avatar] || @user.avatar
-    @user.save
+    byebug
+    if resource.save
+      @user = resource
+      @user.avatar = params[:user][:avatar] 
+      @user.save
+    end
   end
 
   # GET /resource/edit
@@ -22,11 +26,11 @@ class User::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  #   @user.avatar = params[:user][:avatar] 
-  #   @user.save
-  # end
+  def update
+    @user.avatar = params[:user][:avatar] 
+    @user.save
+    super
+  end
 
   # DELETE /resource
   # def destroy
@@ -63,4 +67,5 @@ class User::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
 end

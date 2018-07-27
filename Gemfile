@@ -9,7 +9,7 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'simple_form'
 gem 'record_tag_helper', '~> 1.0'
 gem 'bulma-rails', '~> 0.7.1'
-gem 'gravatar_image_tag'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
