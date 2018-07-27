@@ -1,7 +1,7 @@
 const meetups = [
   {
     name: "lorem rumd eik for tdd sak asyncd",
-    imagUrl: "imagSeatsl",
+    imageUrl: "https://picsum.photos/200/300/?random",
     Capacity: 164,
     profile_pic: "Seats",
     lat: 48.884211,
@@ -9,7 +9,7 @@ const meetups = [
   },
   {
     name: "lorem rumd eik for tdd sak asyncd",
-    imagUrl: "https://picsum.photos/200/300/?random",
+    imageUrl: "https://picsum.photos/200/300/?random",
     Capacity: 200,
     profile_pic: "Seats",
     lat: 48.885707,
@@ -17,7 +17,7 @@ const meetups = [
   },
   {
     name: "lorem rumd eik for tdd sak asyncd",
-    imagUrl: "https://picsum.photos/200/300/?random",
+    imageUrl: "https://picsum.photos/200/300/?random",
     Capacity: 150,
     profile_pic: "Seats",
     lat: 48.885312,
@@ -25,7 +25,7 @@ const meetups = [
   },
   {
     name: "lorem rumd eik for tdd sak asyncd",
-    imagUrl: "https://picsum.photos/200/300/?random",
+    imageUrl: "https://picsum.photos/200/300/?random",
     Capacity: 115,
     profile_pic: "Seats",
     lat: 48.88184,
@@ -33,7 +33,7 @@ const meetups = [
   },
   {
     name: "lorem rumd eik for tdd sak asyncd",
-    imagUrl: "https://picsum.photos/200/300/?random",
+    imageUrl: "https://picsum.photos/200/300/?random",
     Capacity: 135,
     profile_pic: "Seats",
     lat: 48.888839,
@@ -41,7 +41,7 @@ const meetups = [
   },
   {
     name: "lorem rumd eik for tdd sak asyncd",
-    imagUrl: "https://picsum.photos/200/300/?random",
+    imageUrl: "https://picsum.photos/200/300/?random",
     Capacity: 90,
     profile_pic: "Seats",
     lat: 48.827855,
