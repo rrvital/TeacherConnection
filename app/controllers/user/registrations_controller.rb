@@ -12,7 +12,6 @@ class User::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    byebug
     if resource.save
       @user = resource
       @user.avatar = params[:user][:avatar] 
@@ -27,6 +26,8 @@ class User::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
+  if resource.save
+    @user = resource
     @user.avatar = params[:user][:avatar] 
     @user.save
     super
