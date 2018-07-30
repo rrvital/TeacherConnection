@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_181449) do
+ActiveRecord::Schema.define(version: 2018_07_29_203947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(version: 2018_07_27_181449) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "attends", id: :serial, force: :cascade do |t|
+    t.integer "attendee_id"
+    t.integer "attended_event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attended_event_id"], name: "index_attends_on_attended_event_id"
+    t.index ["attendee_id", "attended_event_id"], name: "index_attends_on_attendee_id_and_attended_event_id", unique: true
+    t.index ["attendee_id"], name: "index_attends_on_attendee_id"
+  end
+
+  create_table "categories", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.integer "forum_id"
     t.text "body"
@@ -44,6 +60,22 @@ ActiveRecord::Schema.define(version: 2018_07_27_181449) do
     t.datetime "updated_at", null: false
     t.index ["forum_id"], name: "index_comments_on_forum_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "events", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "date"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_events_on_category_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "forums", force: :cascade do |t|
@@ -92,4 +124,5 @@ ActiveRecord::Schema.define(version: 2018_07_27_181449) do
   end
 
   add_foreign_key "comments", "users"
+  add_foreign_key "events", "users"
 end

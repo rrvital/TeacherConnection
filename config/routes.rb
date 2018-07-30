@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'user/registrations' }  
-  
   devise_scope :user do 
     authenticated :user do 
       root 'forums#index'
@@ -8,9 +7,7 @@ Rails.application.routes.draw do
     unauthenticated do 
       root to: 'pages#index'
     end
-  end
-
-  
+  end  
   resources :forums do
     member do
      put "like", action: :upvote
