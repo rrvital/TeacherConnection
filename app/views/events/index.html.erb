@@ -1,20 +1,12 @@
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-
-<body>
   <section class="section">
-    <div class="container">
-      <h1 class="title">Events</h1>
-      <h2 class="subtitle">
-        Find and Post your events here! <br>
-         <%= link_to 'Post New Event', new_event_path %> 
-      </h2>
-      
-    </div>
+    <h1 class="title">Events</h1>
+    <h2 class="subtitle">
+      Find and Post your events here! <br>
+      <%= link_to 'Post New Event', new_event_path %> 
+    </h2>
   </section>
-</body>
-
-  <div class="columns is-multiline is-mobile">
 
 <% @events.each do |event| %>
 <div class="card">
@@ -45,17 +37,14 @@
       <%= event.address %>
       <br>
       <time datetime="2016-1-1"> <%= event.date %></time> <br>
-
+        <%= link_to 'Show', event %>
+        <%= link_to 'Edit', edit_event_path(event) %>
+        <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
 </div>
+<br>
  <% end %>
 <br>
-
-</div>
-
-
-
-
 
 
