@@ -63,9 +63,11 @@
 <% @forums.each do |forum| %>
   <article class="media">
     <figure class="media-left">
-      <p class="image is-64x64">
-        <%= image_tag(forum.user.avatar) %>
-      </p>
+      <% if forum.user.avatar.attached? %>
+        <p class="image is-64x64">
+          <%= image_tag(forum.user.avatar) %>
+        </p>
+      <% end %>
     </figure>
     <div class="media-content">
       <div class="content">

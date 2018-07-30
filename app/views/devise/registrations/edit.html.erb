@@ -7,7 +7,9 @@
 <div class="field">
   <div class="file is-centered">    
     <label class="file-label">
-      <%= image_tag(current_user.avatar) %>
+      <% if current_user.avatar.attached? %>
+        <%= image_tag(current_user.avatar) %>
+      <% end %>
       <input class="file-input" type="file" name="resume">
       <span class="file-cta">
         <span class="file-icon">
