@@ -34,6 +34,20 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#Image support
+gem 'carrierwave', '0.11.2'
+gem 'mini_magick', '4.5.1'
+gem 'fog', '1.38.0'
+#Object geocoding
+gem 'geocoder'
+#Google Maps
+gem 'gmaps4rails'
+#Ruby I18n
+gem 'i18n'
+# Suite of testing facilities supporting TDD, BDD, mocking, and benchmarking
+gem 'minitest', '~> 5.10', '!= 5.10.2'
+# installing Hirb
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
