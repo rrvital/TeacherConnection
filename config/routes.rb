@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  resources :comments
+  devise_for :users, controllers: { registrations: 'user/registrations' }  
+  
   devise_scope :user do 
-    put "/users" => "user/registrations#update"
-    post "/users" => "user/registrations#create"
+    authenticated :user do 
+      root 'forums#index'
+    end
+    unauthenticated do 
+      root to: 'pages#index'
+    end
   end
-  devise_for :users
+
+  
   resources :forums do
     member do
      put "like", action: :upvote
      put "dislike", action: :downvote
     end
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
-  
-  root to: 'pages#index'
 end
