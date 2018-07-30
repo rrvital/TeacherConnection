@@ -6,13 +6,15 @@
     <div class="container">
       <h1 class="title">Events</h1>
       <h2 class="subtitle">
-        A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+        Find and Post your events here! <br>
+         <%= link_to 'Post New Event', new_event_path %> 
       </h2>
       
     </div>
   </section>
 </body>
 
+  <div class="columns is-multiline is-mobile">
 
 <% @events.each do |event| %>
 <div class="card">
@@ -42,14 +44,18 @@
       <%= event.description %>
       <%= event.address %>
       <br>
-      <time datetime="2016-1-1"> <%= event.date %></time>
+      <time datetime="2016-1-1"> <%= event.date %></time> <br>
+
     </div>
   </div>
 </div>
+ <% end %>
 <br>
 
- <% end %>
+</div>
 
 
 
-<%= link_to 'New Event', new_event_path %>
+
+
+
