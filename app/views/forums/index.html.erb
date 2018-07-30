@@ -77,14 +77,12 @@
     <div class="btn-group">
         <a class="btn btn-default btn-sm" href="<%= forum.url %>">Visit Link</a>
         <%= link_to like_forum_path(forum), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-up"></span>
-       👍
+        <span class="glyphicon"></span>👍
         <%= forum.get_upvotes.size %>
         <% end %>
 
         <%= link_to dislike_forum_path(forum), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-down"></span>
-        👎
+        <span class="glyphicon"></span>👎
         <%= forum.get_downvotes.size %>
         <% end %>
       </div>
