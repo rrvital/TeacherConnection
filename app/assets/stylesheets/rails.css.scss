@@ -83,5 +83,7 @@
 #forums-search-bar{
     width:  600px;
     position: relative;
-    text-align: center;
+    display: block;
+    margin:auto;
+    max-width:300px;
 }
