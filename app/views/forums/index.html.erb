@@ -1,64 +1,34 @@
+<section class="hero is-primary" id= "forum_hero">
+  <div class="hero-body">
+    <h1 id= "forum-heading"> Forums </h1>
+      <h2 id= "forum-heading-subtitle"> Community building for teachers! </h2>
+        <p class="control" id= "new-forum">
+          <%= link_to 'Click to Post', new_forum_path, class: "button is-warning" %>
+        </p>
+  </div>
+</section>
+
+
+
+<div id="main_content" class="container">
+<div id="content" class="col-md-9 center-block">
+
   <div class="columns is-multiline is-mobile">
-  <div class="column is-one-quarter">
-   
-<nav class="panel">
-  <p class="panel-heading">
-    Favorites
-  </p>
-  <div class="panel-block">
-    <p class="control has-icons-left">
-      <input class="input is-small" type="text" placeholder="search">
-      <span class="icon is-small is-left">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </span>
-    </p>
-  </div>
+  <%# <div class="column is-one-quarter">
 
-  <a class="panel-block is-active">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-   Math
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    Science
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    ELAR
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    History
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-code-branch" aria-hidden="true"></i>
-    </span>
-    Electives
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-code-branch" aria-hidden="true"></i>
-    </span>
-    EdTech
-  </a>
-  <div class="panel-block">
-    <button class="button is-link is-outlined is-fullwidth">
-      reset all filters
-    </button>
-  </div>
-</nav>
+  </div> %>
 
-  </div>
   <div class="column">
+   <div class="tabs is-centered">
+  <ul>
+    <li><a>General</a></li>
+    <li><a>Lessons</a></li>
+    <li><a>Classroom Management</a></li>
+    <li><a>Brags</a></li>
+    <li><a>Help Wanted</a></li>
+  </ul>
+  </div>
+
 
 <% @forums.each do |forum| %>
   <article class="media">
@@ -77,14 +47,12 @@
     <div class="btn-group">
         <a class="btn btn-default btn-sm" href="<%= forum.url %>">Visit Link</a>
         <%= link_to like_forum_path(forum), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-up"></span>
-       👍
+        <span class="glyphicon"></span>👍
         <%= forum.get_upvotes.size %>
         <% end %>
 
         <%= link_to dislike_forum_path(forum), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="glyphicon glyphicon-chevron-down"></span>
-        👎
+        <span class="glyphicon"></span>👎
         <%= forum.get_downvotes.size %>
         <% end %>
       </div>
@@ -102,17 +70,20 @@
 
 
 <div class="column">
-<nav class="pagination is-centered" role="navigation" aria-label="pagination">
-  <a class="pagination-previous">Previous</a>
+
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <a class="pagination-previous" title="This is the first page" disabled>Previous</a>
   <a class="pagination-next">Next page</a>
   <ul class="pagination-list">
-    <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
-    <li><span class="pagination-ellipsis">&hellip;</span></li>
-    <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
-    <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
-    <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
-    <li><span class="pagination-ellipsis">&hellip;</span></li>
-    <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+    <li>
+      <a class="pagination-link is-current" aria-label="Page 1" aria-current="page">1</a>
+    </li>
+    <li>
+      <a class="pagination-link" aria-label="Goto page 2">2</a>
+    </li>
+    <li>
+      <a class="pagination-link" aria-label="Goto page 3">3</a>
+    </li>
   </ul>
 </nav>
 

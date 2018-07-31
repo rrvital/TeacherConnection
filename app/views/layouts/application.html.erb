@@ -4,78 +4,80 @@
     <title>TeacherConnection</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
-  </head>
+    <%= javascript_include_tag 'https://unpkg.com/bulma-extensions@2.2.1/dist/js/bulma-extensions.min.js' %>   
+    <%= stylesheet_link_tag  'application.css' %>
+    <%= stylesheet_link_tag  'rails.css' %>
+    </head>
 
-  <body>
-<%# header %>
-<%# <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
-<link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css"> %>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-<%= stylesheet_link_tag  'application.css' %>
-<%= stylesheet_link_tag  'rails.css' %>
-</head>
 <body>
 
 
-	<nav class="navbar is-warning">
-  		<div class="navbar-brand">
-  		<%= link_to root_path, class: "navbar-item" do %>
+<nav class="navbar is-transparent" id= "railsNav">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <%= link_to root_path, class: "navbar-item" do %>
   			<h1 class="title is-5">TeacherConnection!</h1>
   		<% end %>
-			<div class="navbar-burger burger" data-target="navbarExample">
-		      <span></span>
-					<span></span>
-          <span></span>
-  		</div>
-  	 </div>
+    </a>
+    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 
-			<div id="navbarExample" class="navbar-menu">
-				<div class="navbar-end">
-          <div class="navbar-item">
-					<div class="field is-grouped">
-						<p class="control">
-							<%= link_to 'Post Forum', new_forum_path, class: "button is-info is-inverted" %>
-						</p>
-            <% if user_signed_in? %>
+  <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Menu
+        </a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item">
+            <%= link_to 'Forums', forums_path, class: "button is-info is-inverted" %>
+          </a>
+          <a class="navbar-item">
+            <%= link_to 'Events', events_path, class: "button is-info is-inverted" %>
+          </a>
+        <div class="navbar-item">
+        Teachers ❤️ Teachers
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+           <p class="control">
+              <% if user_signed_in? %>
+                <p class="control">
+                  <%= link_to current_user.first_name, edit_user_registration_path, class: "button is-info" %>
+                </p>
+                <p>
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
+                </p>
+              <% else %>
               <p class="control">
-                <%= link_to current_user.first_name, edit_user_registration_path, class: "button is-info" %>
+                <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
               </p>
-              <p>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info" %>
+              <p class="control">
+                <%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
               </p>
-            <% else %>
-            <p class="control">
-              <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
-            </p>
-						<p class="control">
-              <%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
-            </p>
-            <% end %>
-            </div>
-					</div>
-				</div>
-			</div>
-  	</nav>
-  
-  
-  <%# main content container %>
+              <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 
-
-    <div id="main_content" class="container">
-        <% flash.each do |name, msg| %>
-          <%= content_tag(:div, msg, class: "alert alert-info") %>
-        <% end %>
-
-
-    <div id="content" class="col-md-9 center-block">
 
     <%= yield %>
 
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 
   </body>
 </html>

@@ -70,11 +70,6 @@ function main() {
 
     });
 	
-    // Nivo Lightbox 
-    $('.portfolio-item a').nivoLightbox({
-            effect: 'slideDown',  
-            keyboardNav: true,                            
-        });
 
 }());
 

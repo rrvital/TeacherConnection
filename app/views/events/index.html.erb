@@ -1,0 +1,72 @@
+<section class="hero is-primary" id= "events_hero">
+  <div class="hero-body">
+    <h1 id= "forum-heading"> Events </h1>
+      <h2 id= "forum-heading-subtitle">  
+          Hosting a Meetup? <br>
+          Need PD?  <br> </h2>
+        <p class="control" id= "new-event">
+          <%= link_to 'Click to Post', new_forum_path, class: "button is-warning" %>
+        </p>
+  </div>
+</section>
+  <div class="column">
+   <div class="tabs is-centered">
+  <ul>
+    <li><a>General</a></li>
+    <li><a>Lessons</a></li>
+    <li><a>Classroom Management</a></li>
+    <li><a>Brags</a></li>
+    <li><a>Help Wanted</a></li>
+  </ul>
+  </div>
+
+
+<div id="main_content" class="container">
+
+<div id="content" class="col-md-9 center-block">
+ 
+
+<div class="columns is-multiline is-mobile">
+
+<% @events.each do |event| %>
+<div class="card" id="eventCard">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <% if event.image.attached? %>
+        <%= image_tag event.image %>
+      <% end %>
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <% if event.user.avatar.attached? %>
+            <%= image_tag(event.user.avatar) %>
+          <% end%>
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4"><%= event.title %></p>
+        <p class="subtitle is-6">Posted by: <%= event.user.username %></p>
+      </div>
+    </div>
+
+    <div class="content">
+      <%= event.description %> <br>
+      <%= event.address %>
+      <br>
+      <time datetime="2016-1-1"> <%= event.date %></time> <br>
+        <%= link_to 'Show', event %>
+        <%= link_to 'Edit', edit_event_path(event) %>
+        <%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+</div>
+<br>
+
+ <% end %>
+<br>
+
+</div>
+
