@@ -1,17 +1,11 @@
 <section class="hero is-primary" id= "forum_hero">
-<div class="hero-body">
-<h1 id= "forum-heading"> Forums </h1>
-<h2 id= "forum-heading-subtitle"> Subtitle </h2>
-
-
-<form class="control"  id="forums-search-bar">
-  <input type="text"  class="input" placeholder="Search" name="search2">
-  <button type="submit" class= "button is-info">Search</button>
-</form>
-
-
-</div>
-
+  <div class="hero-body">
+    <h1 id= "forum-heading"> Forums </h1>
+      <h2 id= "forum-heading-subtitle"> Community building for teachers! </h2>
+        <p class="control" id= "new-forum">
+          <%= link_to 'Click to Post', new_forum_path, class: "button is-warning" %>
+        </p>
+  </div>
 </section>
 
 

@@ -1,19 +1,30 @@
- <section class="hero is-primary" id= "events_hero">
-<div class="hero-body">
-
-</div>
+<section class="hero is-primary" id= "events_hero">
+  <div class="hero-body">
+    <h1 id= "forum-heading"> Events </h1>
+      <h2 id= "forum-heading-subtitle">  
+          Hosting a Meetup? <br>
+          Need PD?  <br> </h2>
+        <p class="control" id= "new-event">
+          <%= link_to 'Click to Post', new_forum_path, class: "button is-warning" %>
+        </p>
+  </div>
 </section>
+  <div class="column">
+   <div class="tabs is-centered">
+  <ul>
+    <li><a>General</a></li>
+    <li><a>Lessons</a></li>
+    <li><a>Classroom Management</a></li>
+    <li><a>Brags</a></li>
+    <li><a>Help Wanted</a></li>
+  </ul>
+  </div>
+
 
 <div id="main_content" class="container">
+
 <div id="content" class="col-md-9 center-block">
  
-  <section class="section">
-    <h1 class="title">Events</h1>
-    <h2 class="subtitle">
-      Find and Post your events here! <br>
-      <%= link_to 'Post New Event', new_event_path %> 
-    </h2>
-  </section>
 
 <div class="columns is-multiline is-mobile">
 
@@ -37,7 +48,7 @@
       </div>
       <div class="media-content">
         <p class="title is-4"><%= event.title %></p>
-        <p class="subtitle is-6"><%= event.user.username %></p>
+        <p class="subtitle is-6">Posted by: <%= event.user.username %></p>
       </div>
     </div>
 
