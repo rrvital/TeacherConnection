@@ -21,7 +21,7 @@
 <body>
 
 
-<nav class="navbar is-transparent">
+<nav class="navbar is-transparent" id= "railsNav">
   <div class="navbar-brand">
     <a class="navbar-item">
       <%= link_to root_path, class: "navbar-item" do %>
@@ -46,7 +46,7 @@
             	<%= link_to 'Post Forum', new_forum_path, class: "button is-info is-inverted" %>
           </a>
           <a class="navbar-item">
-            <%= link_to 'Events', events_path, class: "button is-info is-inverted" %>
+            <%= link_to 'Forums', forums_path, class: "button is-info is-inverted" %>
           </a>
           <a class="navbar-item">
             <%= link_to 'Events', events_path, class: "button is-info is-inverted" %>
@@ -85,33 +85,13 @@
 
 
 
-<section class="hero is-primary">
-  <div class="hero-body">
-    <p class="title">
-      Landing Container
-    </p>
-    <p class="subtitle">
-      Subtitle
-    </p>
-  </div>
-</section>
-
-  
-  
-  <%# main content container %>
 
 
-    <div id="main_content" class="container">
-        <% flash.each do |name, msg| %>
-          <%= content_tag(:div, msg, class: "alert alert-info") %>
-        <% end %>
-
-
-    <div id="content" class="col-md-9 center-block">
 
     <%= yield %>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 
   </body>
 </html>
