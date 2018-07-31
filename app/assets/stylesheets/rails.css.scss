@@ -1,5 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
 @import "bulma";
 
 
@@ -68,4 +66,22 @@
     margin: auto;
     text-align: center;
     width: 400px;
+}
+
+#forum-heading{
+    position: relative;
+    text-align: center;
+    font-size: 5em;
+}
+
+#forum-heading-subtitle{
+    position: relative;
+    text-align: center;
+    font-size: 2em;
+}
+
+#forums-search-bar{
+    width:  600px;
+    position: relative;
+    text-align: center;
 }
