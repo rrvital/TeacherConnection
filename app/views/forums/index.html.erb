@@ -1,8 +1,10 @@
-<section class="hero is-primary" id= "forum_hero">
+<%# <section class="hero is-primary" id= "forum_hero">
 <div class="hero-body">
-
+<h1> Forums </h1>
 </div>
-</section>
+</section> %>
+
+
 
 <div id="main_content" class="container">
 <% flash.each do |name, msg| %>
@@ -11,66 +13,21 @@
 <div id="content" class="col-md-9 center-block">
 
   <div class="columns is-multiline is-mobile">
-  <div class="column is-one-quarter">
-   
-<nav class="panel">
-  <p class="panel-heading">
-    Favorites
-  </p>
-  <div class="panel-block">
-    <p class="control has-icons-left">
-      <input class="input is-small" type="text" placeholder="search">
-      <span class="icon is-small is-left">
-        <i class="fas fa-search" aria-hidden="true"></i>
-      </span>
-    </p>
-  </div>
+  <%# <div class="column is-one-quarter">
 
-  <a class="panel-block is-active">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-   Math
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    Science
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    ELAR
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-book" aria-hidden="true"></i>
-    </span>
-    History
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-code-branch" aria-hidden="true"></i>
-    </span>
-    Electives
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fas fa-code-branch" aria-hidden="true"></i>
-    </span>
-    EdTech
-  </a>
-  <div class="panel-block">
-    <button class="button is-link is-outlined is-fullwidth">
-      reset all filters
-    </button>
-  </div>
-</nav>
+  </div> %>
 
-  </div>
   <div class="column">
+   <div class="tabs is-centered">
+  <ul>
+    <li><a>General</a></li>
+    <li><a>Lessons</a></li>
+    <li><a>Classroom Management</a></li>
+    <li><a>Brags</a></li>
+    <li><a>Help Wanted</a></li>
+  </ul>
+  </div>
+
 
 <% @forums.each do |forum| %>
   <article class="media">

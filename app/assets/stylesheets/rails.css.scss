@@ -1,3 +1,5 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "bulma";
 
 
@@ -52,7 +54,7 @@
     height: 600px;
     padding: 0;
     background: url(teaching_landing.jpg) no-repeat center top;
-    background-size: 100% 100%;
+    background-size: 120% 100%;
 
 }
 
@@ -61,3 +63,9 @@
 //        background-color: aqua;
 //        display: absolute;
 //    }
+
+#forums_search {
+    margin: auto;
+    text-align: center;
+    width: 400px;
+}
