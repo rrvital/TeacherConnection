@@ -50,6 +50,21 @@ GEM
     arel (9.0.0)
     autoprefixer-rails (9.0.2)
       execjs
+    aws-eventstream (1.0.1)
+    aws-partitions (1.96.0)
+    aws-sdk-core (3.22.1)
+      aws-eventstream (~> 1.0)
+      aws-partitions (~> 1.0)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.6.0)
+      aws-sdk-core (~> 3)
+      aws-sigv4 (~> 1.0)
+    aws-sdk-s3 (1.17.0)
+      aws-sdk-core (~> 3, >= 3.21.2)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.0)
+    aws-sigv4 (1.0.3)
     bcrypt (3.1.12)
     better_errors (2.4.0)
       coderay (>= 1.0.0)
@@ -86,6 +101,10 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
@@ -121,6 +140,7 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jmespath (1.4.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -250,6 +270,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.11.1)
+  aws-sdk-s3
   better_errors (~> 2.4)
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.3, >= 3.3.7)
@@ -258,6 +279,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   devise
+  dotenv-rails
   faker (~> 1.8, >= 1.8.7)
   guard (~> 2.14, >= 2.14.2)
   guard-livereload (~> 2.5, >= 2.5.2)
